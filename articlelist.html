@@ -21,13 +21,7 @@
     <link href="layui/css/layui.css" rel="stylesheet" type="text/css">
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="assets/js/skins.min.js"></script>
-    <style>
-        .layui-upload-img {
-            width: 92px;
-            height: 92px;
-            margin: 0 10px 10px 0;
-        }
-    </style>
+
 
 </head>
 <body>
@@ -815,7 +809,7 @@
                         <i class="fa fa-home"></i>
                         <a href="#">主页</a>
                     </li>
-                    <li class="active">艺人添加</li>
+                    <li class="active">文章管理</li>
                 </ul>
             </div>
             <!-- /页面面包屑 -->
@@ -823,7 +817,7 @@
             <div class="page-header position-relative">
                 <div class="header-title">
                     <h1>
-                        艺人添加
+                        文章管理
                     </h1>
                 </div>
                 <!--Header Buttons-->
@@ -844,85 +838,88 @@
             <!-- Page Body -->
             <div class="page-body">
                 <div class="row">
-                    <div class="col-xs-12 col-md-6 col-lg-12">
-                        <div class="widget flat radius-bordered">
-                            <div class="widget-header bg-blue">
-                                <span class="widget-caption">艺人添加</span>
-
+                    <div class="col-md-12 col-xs-12">
+                        <div class="well with-header with-footer">
+                            <div class="header bordered-sky">
+                                文章列表
+                                <span class="badge badge-sky badge-square">
+                                     提示：点击编辑可查看详细信息
+                                </span>
                             </div>
-                            <div class="widget-body col-lg-12">
-                                <div id="registration-form">
-                                    <form action="" role="form">
-                                        <div class="form-title">基本信息</div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>昵称</label>
-                                                <span class="input-icon icon-right">
-                                                    <input type="text" class="form-control">
-                                                    <i class="fa fa-user"></i>
-                                                </span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>直播平台</label>
-                                                <span class="input-icon icon-right">
-                                                    <input type="text" class="form-control">
-                                                    <i class="fa fa-user"></i>
-                                                </span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>直播ID</label>
-                                                <span class="input-icon icon-right">
-                                                    <input type="text" class="form-control">
-                                                    <i class="fa fa-user"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!--right-->
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>人气</label>
-                                                <span class="input-icon icon-right">
-                                                    <input type="text" class="form-control">
-                                                    <i class="fa fa-user"></i>
-                                                </span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>身高</label>
-                                                <span class="input-icon icon-right">
-                                                    <input type="text" class="form-control">
-                                                    <i class="fa fa-user"></i>
-                                                </span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>描述</label>
-                                                <span class="input-icon icon-right">
-                                                    <input type="text" class="form-control">
-                                                    <i class="fa fa-user"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!--/right-->
-                                        <div class="form-title">封面图片信息</div>
-                                        <div class="col-sm-12">
-                                            <div class="layui-upload">
-                                                <button type="button" class="layui-btn layui-btn-normal" id="upload">上传封面</button>
-                                                <div class="layui-upload-list">
-                                                    <img class="layui-upload-img" id="demo1">
-                                                    <p id="demoText"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-title">艺人详细内容信息</div>
-                                        <div class="col-sm-12">
-                                            <textarea id="demo" style="display: none;"></textarea>
-                                            <div style="float:right;margin-top:10px;">
-                                                <a href="" class="btn btn-success">保存</a>
-                                            </div>
-                                        </div>
-                                    </form>
+                            <form class="search" method="get">
+                                <div style="float:right;margin-right:2px;">
+                                    <a href="" class="btn btn-success">发布文章</a>
                                 </div>
-                            </div>
-
+                                <div style="float:left;margin-right:2px;">
+                                    <div class="form-group">
+                                        <select name="search">
+                                            <option value="1">荣耀世纪</option>
+                                            <option value="2">主播资讯</option>
+                                            <option value="3">业界资讯</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                            <span class="input-icon icon-right">
+                                                <input type="text" value="" name="searchText" class="form-control"
+                                                       placeholder="按文章标题搜索">
+                                                <i class="fa fa-search"></i>
+                                            </span>
+                                    </div>
+                                </div>
+                            </form>
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        文章内容
+                                    </th>
+                                    <th>
+                                        封面图
+                                    </th>
+                                    <th>
+                                        分类
+                                    </th>
+                                    <th>
+                                        内容
+                                    </th>
+                                    <th>
+                                        发布时间
+                                    </th>
+                                    <th>
+                                        操作
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        8哥
+                                    </td>
+                                    <td>
+                                        112314
+                                    </td>
+                                    <td>
+                                        舒克舒克舒克开飞机
+                                    </td>
+                                    <td>
+                                        不展示
+                                    </td>
+                                    <td>
+                                        122472
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0);" class="btn btn-labeled btn-palegreen">
+                                            <i class="btn-label glyphicon glyphicon-ok"></i>Success
+                                        </a>
+                                        <a href="javascript:void(0);" class="btn btn-labeled btn-blue">
+                                            <i class="btn-label fa fa-exclamation"></i>Info
+                                        </a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -938,52 +935,8 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <!--此处补充js文件-->
 <script src="layui/layui.js"></script>
-
 <!--Beyond Scripts-->
 <script src="assets/js/beyond.min.js"></script>
 <script src="assets/js/select2/select2.js"></script>
-<script type="text/javascript">
-    layui.use('upload', function () {
-        var $ = layui.jquery
-            , upload = layui.upload;
-
-        //普通图片上传
-        var uploadInst = upload.render({
-            elem: '#upload'
-            , url: '/upload/'
-            , before: function (obj) {
-                //预读本地文件示例，不支持ie8
-                obj.preview(function (index, file, result) {
-                    $('#demo1').attr('src', result); //图片链接（base64）
-                });
-            }
-            , done: function (res) {
-                //如果上传失败
-                if (res.code > 0) {
-                    return layer.msg('上传失败');
-                }
-                //上传成功
-            }
-            , error: function () {
-                //演示失败状态，并实现重传
-                var demoText = $('#demoText');
-                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
-                demoText.find('.demo-reload').on('click', function () {
-                    uploadInst.upload();
-                });
-            }
-        });
-    });
-    layui.use('layedit', function(){
-        var layedit = layui.layedit;
-        layedit.set({
-            uploadImage: {
-                url: '' //接口url
-                ,type: 'post' //默认post
-            }
-        });
-        layedit.build('demo'); //建立编辑器
-    });
-</script>
 </body>
 </html>

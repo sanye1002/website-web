@@ -815,7 +815,7 @@
                         <i class="fa fa-home"></i>
                         <a href="#">主页</a>
                     </li>
-                    <li class="active">艺人添加</li>
+                    <li class="active">文章添加</li>
                 </ul>
             </div>
             <!-- /页面面包屑 -->
@@ -823,7 +823,7 @@
             <div class="page-header position-relative">
                 <div class="header-title">
                     <h1>
-                        艺人添加
+                        文章添加
                     </h1>
                 </div>
                 <!--Header Buttons-->
@@ -844,85 +844,64 @@
             <!-- Page Body -->
             <div class="page-body">
                 <div class="row">
-                    <div class="col-xs-12 col-md-6 col-lg-12">
+                    <div class="col-xs-12 col-md-12">
                         <div class="widget flat radius-bordered">
                             <div class="widget-header bg-blue">
-                                <span class="widget-caption">艺人添加</span>
-
+                                <span class="widget-caption">文章发布</span>
                             </div>
                             <div class="widget-body col-lg-12">
-                                <div id="registration-form">
-                                    <form action="" role="form">
-                                        <div class="form-title">基本信息</div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>昵称</label>
-                                                <span class="input-icon icon-right">
+                                <form action="" role="form">
+                                    <div class="form-title">基本内容</div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>标题</label>
+                                            <span class="input-icon icon-right">
                                                     <input type="text" class="form-control">
                                                     <i class="fa fa-user"></i>
-                                                </span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>直播平台</label>
-                                                <span class="input-icon icon-right">
-                                                    <input type="text" class="form-control">
-                                                    <i class="fa fa-user"></i>
-                                                </span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>直播ID</label>
-                                                <span class="input-icon icon-right">
-                                                    <input type="text" class="form-control">
-                                                    <i class="fa fa-user"></i>
-                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>文章类别</label>
+                                            <div class="radio">
+                                                <label>
+                                                    <input name="form-field-radio" type="radio" class="colored-blue">
+                                                    <span class="text">荣耀世纪</span>
+                                                </label>
+                                                <label>
+                                                    <input name="form-field-radio" type="radio" class="colored-success">
+                                                    <span class="text">主播资讯</span>
+                                                </label>
+                                                <label>
+                                                    <input name="form-field-radio" type="radio"
+                                                           class="colored-blueberry">
+                                                    <span class="text">业界资讯</span>
+                                                </label>
                                             </div>
                                         </div>
-                                        <!--right-->
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>人气</label>
-                                                <span class="input-icon icon-right">
-                                                    <input type="text" class="form-control">
-                                                    <i class="fa fa-user"></i>
-                                                </span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>身高</label>
-                                                <span class="input-icon icon-right">
-                                                    <input type="text" class="form-control">
-                                                    <i class="fa fa-user"></i>
-                                                </span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>描述</label>
-                                                <span class="input-icon icon-right">
-                                                    <input type="text" class="form-control">
-                                                    <i class="fa fa-user"></i>
-                                                </span>
+                                    </div>
+                                    <div class="form-title">封面图片<span>大小：</span></div>
+                                    <div class="col-sm-12">
+                                        <div class="layui-upload">
+                                            <button type="button" class="layui-btn layui-btn-normal" id="upload">上传封面
+                                            </button>
+                                            <div class="layui-upload-list">
+                                                <img class="layui-upload-img" id="demo1">
+                                                <p id="demoText"></p>
                                             </div>
                                         </div>
-                                        <!--/right-->
-                                        <div class="form-title">封面图片信息</div>
-                                        <div class="col-sm-12">
-                                            <div class="layui-upload">
-                                                <button type="button" class="layui-btn layui-btn-normal" id="upload">上传封面</button>
-                                                <div class="layui-upload-list">
-                                                    <img class="layui-upload-img" id="demo1">
-                                                    <p id="demoText"></p>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="form-title">文章详细内容信息</div>
+                                    <div class="col-sm-12">
+                                        <textarea id="demo" style="display: none;"></textarea>
+                                        <div style="float:right;margin-top:10px;">
+                                            <a href="" class="btn btn-success">保存</a>
                                         </div>
-                                        <div class="form-title">艺人详细内容信息</div>
-                                        <div class="col-sm-12">
-                                            <textarea id="demo" style="display: none;"></textarea>
-                                            <div style="float:right;margin-top:10px;">
-                                                <a href="" class="btn btn-success">保存</a>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                                    </div>
 
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -938,7 +917,6 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <!--此处补充js文件-->
 <script src="layui/layui.js"></script>
-
 <!--Beyond Scripts-->
 <script src="assets/js/beyond.min.js"></script>
 <script src="assets/js/select2/select2.js"></script>
@@ -974,12 +952,12 @@
             }
         });
     });
-    layui.use('layedit', function(){
+    layui.use('layedit', function () {
         var layedit = layui.layedit;
         layedit.set({
             uploadImage: {
                 url: '' //接口url
-                ,type: 'post' //默认post
+                , type: 'post' //默认post
             }
         });
         layedit.build('demo'); //建立编辑器
