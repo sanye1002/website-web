@@ -905,7 +905,9 @@
                                         <div class="form-title">封面图片信息</div>
                                         <div class="col-sm-12">
                                             <div class="layui-upload">
-                                                <button type="button" class="layui-btn layui-btn-normal" id="upload">上传封面</button>
+                                                <button type="button" class="layui-btn layui-btn-normal" id="upload">
+                                                    上传封面
+                                                </button>
                                                 <div class="layui-upload-list">
                                                     <img class="layui-upload-img" id="demo1">
                                                     <p id="demoText"></p>
@@ -949,20 +951,26 @@
 
         //普通图片上传
         var uploadInst = upload.render({
-            elem: '#upload'
-            , url: '/upload/'
-            , before: function (obj) {
+            elem: '#upload',
+            url: 'http://localhost:8080/upload/img/anchor',
+            data:{"key":"132"},
+            before: function (obj) {
                 //预读本地文件示例，不支持ie8
                 obj.preview(function (index, file, result) {
                     $('#demo1').attr('src', result); //图片链接（base64）
                 });
             }
             , done: function (res) {
+
                 //如果上传失败
                 if (res.code > 0) {
-                    return layer.msg('上传失败');
+                    return layer.msg(res.msg);
                 }
                 //上传成功
+
+
+
+
             }
             , error: function () {
                 //演示失败状态，并实现重传
@@ -974,12 +982,12 @@
             }
         });
     });
-    layui.use('layedit', function(){
+    layui.use('layedit', function () {
         var layedit = layui.layedit;
         layedit.set({
             uploadImage: {
                 url: '' //接口url
-                ,type: 'post' //默认post
+                , type: 'post' //默认post
             }
         });
         layedit.build('demo'); //建立编辑器
